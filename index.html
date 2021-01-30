@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSITY</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon">
+
+    <!-- STYLES -->
+    <link type="text/css" rel="stylesheet" href="./style/login.css">
+    <link type="text/css" rel="stylesheet" href="./style/asignaturas.css">
+    <link type="text/css" rel="stylesheet" href="./style/header.css">
+    <link type="text/css" rel="stylesheet" href="./style/foro.css">
+    <link type="text/css" rel="stylesheet" href="./style/style.css">
+    <link type="text/css" rel="stylesheet" href="./style/responsive-media.css">
+    <link type="text/css" rel="stylesheet" href="./style/upload.css">
+
+    <!-- CSS descargados de paginas de iconos por seguridad-->
+    <link type="text/css" rel="stylesheet" href="./style/material-icons.css">
+    <link type="text/css" rel="stylesheet" href="./style/all.css">
+
+    <!-- CSS online de los antes descargados-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- CSS del calendario-->
+    <link rel="stylesheet" type="text/css" href="./style/evo-calendar.css" />
+    <link rel="stylesheet" type="text/css" href="./style/evo-calendar.midnight-blue.css" />
+
+    <!-- SCRIPTS  Plugin descargado-->
+    <script src="./script/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
+    <!-- SCRIPTS  Plugin Excel-->
+    <script src="./script/jquery.table2excel.js"></script>
+    <!-- SCRIPTS  Plugin Validate Form-->
+    <script src="./script/jquery.validate.js"></script>
+    <!-- Script Calendar plugin descargado -->
+    <script src="./script/evo-calendar.js"></script>
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+    <!-- My Script-->
+    <script src="./script/script.js"></script>
+
+    <!-- JPages paginado and show items-->
+    <link rel="stylesheet" href="style/jPages.css">
+    <script src="script/jPages.js"></script>
+
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+</head>
+
+<body>
+    <!-- Pagina de inicio -->
+    <div class="login-panel" id="login_page">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Login with your account</p>
+            <label id="label-register" for="log-reg-show">Login</label>
+            <input type="button" name="active-log-panel" id="log-reg-show" value="change" />
+        </div>
+
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <p>Please Register</p>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="button" name="active-log-panel" id="log-login-show" value="change" />
+        </div>
+
+        <div class="white-panel">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <form class="start_form" onsubmit="return false;" id="login_form" autocomplete="off">
+                    <div class="input-group input-group-icon">
+                        <input id="login_email" type="email" name="email" placeholder="Email*" required />
+                        <div class="input-icon"><i class="fas fa-envelope-square"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <input id="login_password" type="password" name="password" placeholder="Password*" required />
+                        <div class="input-icon"><i class="fas fa-unlock-alt"></i></div>
+                    </div>
+                    <div id="user_confirmation"></div>
+
+                    <button id="login_submit" type="button" onclick="LoginFunction()">Login</button>
+                    <input class="reset" id="login_reset" type="reset" value="Reset" />
+
+                </form>
+                <p class="signup">
+                    Don't have an account ?
+                    <label id="label-login-movil" for="log-login-show-movil">Register</label>
+                    <input type="button" name="active-log-panel" id="log-login-show-movil" value="change" />
+                </p>
+            </div>
+
+            <div class="register-show">
+                <h2>REGISTER</h2>
+                <form class="start_form" id="register_form" autocomplete="off" onsubmit="return false;">
+                    <h4>Account Information</h4>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_user" name="user" type="text" placeholder="User Name*" required />
+                        <div class="input-icon"><i class="fa fa-user"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_password" name="password" type="password" placeholder="Password*" required />
+                        <div class="input-icon"><i class="fas fa-unlock-alt"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_confirm_password" name="confirm_password" type="password" placeholder="Confirm Password*" required />
+                        <div class="input-icon"><i class="fas fa-unlock-alt"></i></div>
+                    </div>
+
+                    <h4>Personal Information</h4>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_first_name" name="first_name" type="text" placeholder="Name*" required />
+                        <div class="input-icon"><i class="fa fa-user"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_last_name" name="last_name" type="text" placeholder="Last Name*" required />
+                        <div class="input-icon"><i class="fa fa-user"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_email" name="email" type="email" placeholder="Email*" required />
+                        <div class="input-icon"><i class="fas fa-envelope"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <div id="rol_box">
+                            <select id="rol" name="rol" required>
+                                <option disabled="disabled" value="" selected="selected">Rol...</option>
+                                <option value="student">STUDENT</option>
+                                <option value="teacher">TEACHER</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                        <input class="registerform-input" id="register_university" name="university" type="text" placeholder="university" value="ECLET" readonly required />
+                        <div class="input-icon"><i class="fas fa-school"></i></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label id="label_checkbox" for="terms" style="white-space: nowrap;"> <input type="checkbox"
+                                class="checkbox" id="terms" name="terms" required> I Agree to the Terms and Conditions</label>
+                    </div>
+                    <button id="save_button" type="button" onclick="RegisterFunction()">Save</button>
+                    <input class="reset reset_button" type="reset" value="Reset" />
+                </form>
+                <p class="signup">
+                    Already have an account?
+                    <label id="label-register-movil" for="log-reg-show-movil">Login</label>
+                    <input type="button" name="active-log-panel" id="log-reg-show-movil" value="change" />
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--MAin Page-->
+    <div class="page" id="main_page">
+        <header>
+            <!-- El logo de la universidad-->
+            <button class="logo main_button">
+                <i class="fas fa-university"></i>
+                <span id="logo_theory_of">UNIVERSITY</span>
+                <span id= "of">OF</span>
+                <span id="logo_errors">ECLET</span>
+                <span id="eclet-tablet">ECLET</span>
+            </button>
+
+            <!-- Boton hamburguesa para la pagina version movil-->
+            <button class="hamburger hamburger--spin" id="burguer" type="button" onclick="MenuMovil()">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <!--Lista izquierda en version movil-->
+
+            <nav class="nav-bar" id="nav-bar-movil">
+
+                <div class="sticky-div">
+
+                    <div class="contenedor-menu">
+                        <ul id="menu_izquierda_mov">
+                            <li>
+                                <button class="mycourses_button"><i class="icono izquierda fas fa-graduation-cap"></i>
+                                    <span class="link-name">Asignaturas </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                <ul>
+                                    <li class="AC_subjects" id="AC_movil">
+                                        <button class="button_AC"><span class="link-name">Arquitectura de computadores </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_AC_movil"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="EC_subjects" id="EC_movil">
+                                        <button class="button_EC"><span class="link-name">Estructura de computadores </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_EC_movil"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="IS_subjects" id="IS_movil">
+                                        <button class="button_IS"><span class="link-name">Ingenieria del Software </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity my_courses_list"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="my_courses_list"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_IS_movil"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="IU_subjects" id="IU_movil">
+                                        <button class="button_IU"><span class="link-name">Interfaces de usuario </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_IU_movil"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="Prog_subjects" id="Prog_movil">
+                                        <button class="button_Prog"><span class="link-name">Programacion </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_Prog_movil"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="RO_subjects" id="RO_movil">
+                                        <button class="button_RO"><span class="link-name">Redes de ordenadores </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_RO_movil"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button id="myBtn1_movil"><i class="icono izquierda fas fa-calendar-times"></i>
+                                    <span class="link-name"> Calendario General</span></button>
+                            </li>
+                            <li class="just_profesor">
+                                <button class="all_calification_button"><i class="icono izquierda fas fa-table"></i><span class="link-name">Calificaciones</span></button>
+                            </li>
+                            <li class="just_student" id="_all_c_list_movil">
+                                <button class="my_calification_button"><i class="icono izquierda fas fa-table"></i><span class="link-name">Calificaciones</span></button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="nav_top">
+                <div>
+                    <button onclick="DisplaySubmenu()"><i id="menu_arrow" class="fas fa-chevron-down"></i></button>
+                    <div class="submenu">
+                        <button id="close_session" type="button" onclick="LogOutFunction()">LOG OUT</button>
+                    </div>
+                </div>
+                <div id="user_contact">
+                    <div id="user_name_menu"></div>
+                    <div id="user_img"><img src="./images/default-user.png" alt="Image user"></div>
+                </div>
+
+            </nav>
+
+        </header>
+
+        <div class="container">
+            <nav class="nav_left">
+
+                <div class="sticky-div">
+                    <h2 class="just_profesor rol_menu">PROFESOR</h2>
+                    <h2 class="just_student rol_menu">ESTUDIANTE</h2>
+                    <div class="clearfix"></div>
+                    <div class="main-white-line"></div>
+                    <div class="white-line" id="main-white-line"></div>
+
+                    <div class="contenedor-menu">
+                        <ul id="menu_izquierda">
+                            <li>
+                                <button class="mycourses_button"><i class="icono izquierda fas fa-graduation-cap"></i>
+                                    <span class="link-name">Asignaturas </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                <ul>
+                                    <li class="AC_subjects" id="AC">
+                                        <button class="button_AC"><span class="link-name">Arquitectura de computadores </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_AC"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="EC_subjects" id="EC">
+                                        <button class="button_EC"><span class="link-name">Estructura de computadores </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_EC"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="IS_subjects" id="IS">
+                                        <button class="button_IS"><span class="link-name">Ingenieria del Software </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity my_courses_list"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_IS"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="IU_subjects" id="IU">
+                                        <button class="button_IU"><span class="link-name">Interfaces de usuario </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_IU"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="Prog_subjects" id="Prog">
+                                        <button class="button_Prog"><span class="link-name">Programacion </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_Prog"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                    <li class="RO_subjects" id="RO">
+                                        <button class="button_RO"><span class="link-name">Redes de ordenadores </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                        <ul>
+                                            <li><button class="just_profesor btn_upload"><span class="link-name">Subir Material</span></button></li>
+                                            <li><button class="just_profesor btn_activity"><span class="link-name">Añadir Actividad</span></button></li>
+                                            <li><button class="just_profesor calificate_activity"><span class="link-name">Calificaciones</span></button></li>
+                                            <li><button class="foro_subjects"><span class="link-name">Foro</span></button></li>
+                                            <li><button class="calendar_just_subject" id="calendario_RO"><span class="link-name">Calendario</span></button></li>
+                                            <li><button class="just_student my_courses_list_stud"><span class="link-name">Calificaciones</span></button></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button id="myBtn1"><i class="icono izquierda fas fa-calendar-times"></i>
+                                    <span class="link-name">Calendario General</span></button>
+                            </li>
+                            <!-- <li class="just_profesor">
+                                <button class="students_button"><i class="icono izquierda fas fa-users"></i>
+                                    <span class="link-name">Estudiantes </span><i class="icono derecha fa fa-chevron-down"></i></button>
+                                <ul>
+                                    <li id="all_students_list">
+                                        <button class="all_students_button"><span class="link-name">Todos los Estudiantes</span></button>
+                                    </li>
+                                    <li id="_all_calification_list">
+                                        <button class="all_calification_button" onclick="showGraphs()"><span class="link-name">Calificaciones</span></button>
+                                    </li>
+                                </ul>
+                            </li>-->
+                            <li class="just_profesor" id="_all_cali_list">
+                                <button class="all_calification_button"><i class="icono izquierda fas fa-table"></i><span class="link-name">Calificaciones</span></button>
+                            </li>
+                            <li class="just_student" id="_all_c_list">
+                                <button class="my_calification_button"><i class="icono izquierda fas fa-table"></i><span class="link-name">Calificaciones</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <main>
+                <!-- The Pop Up -->
+                <div id="myModal1" class="modal">
+                    <!-- Pop Up content -->
+                    <div class="modal-content">
+                        <span class="close_calendar">&times;</span>
+
+                        <div id="calendar_general"></div>
+                        <div id="calendar_AC"></div>
+                        <div id="calendar_EC"></div>
+                        <div id="calendar_IS"></div>
+                        <div id="calendar_IU"></div>
+                        <div id="calendar_RO"></div>
+                        <div id="calendar_Prog"></div>
+                    </div>
+                </div>
+
+                <div class="principal_page">
+                    <!--Gráficas de las calificaciones-->
+                    <div id='myDiv'>
+                        <!-- Plotly chart will be drawn inside this DIV -->
+                    </div>
+                    <div id="content" class="defaults">
+                        <!-- item container -->
+                        <ul id="itemContainer">
+                            <li class="AC_subjects" id="AC_main">
+                                <div class="subject-theme">
+                                    <div class="box-image">
+                                        <img class="left-image" src="./images/course3.jpg" alt="Arquitectura-computadores" />
+                                        <div class="right-text">
+                                            <h4>Arquitectura de computadores</h4>
+                                            <h5> Cód. 14732</h5>
+                                            <button class="RM_AC"> Read More </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="EC_subjects" id="EC_main">
+                                <div class="subject-theme">
+                                    <div class="box-image">
+                                        <img class="left-image" src="./images/course6.jpg" alt="Estructura-computadores" />
+                                        <div class="right-text">
+                                            <h4>Estructura de computadores</h4>
+                                            <h5> Cód. 14735</h5>
+                                            <button class="RM_EC"> Read More </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="IU_subjects" id="IU_main">
+                                <div class="subject-theme">
+                                    <div class="box-image">
+                                        <img class="left-image" src="./images/course2.jpg" alt="Interfaces-usuarios" />
+                                        <div class="right-text">
+                                            <h4>Interfaces de usuario</h4>
+                                            <h5> Cód. 14731</h5>
+                                            <button class="RM_IU"> Read More </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="IS_subjects" id="IS_main">
+                                <div class="subject-theme">
+                                    <div class="box-image">
+                                        <img class="left-image" src="./images/course1.jpg" alt="Ingenieria-Software" />
+                                        <div class="right-text">
+                                            <h4>Ingenieria del Software</h4>
+                                            <h5> Cód. 14730</h5>
+                                            <button class="RM_IS"> Read More </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="Prog_subjects" id="Prog_main">
+                                <div class="subject-theme">
+                                    <div class="box-image">
+                                        <img class="left-image" src="./images/course4.jpeg" alt="Programacion" />
+                                        <div class="right-text">
+                                            <h4>Programacion</h4>
+                                            <h5> Cód. 14734</h5>
+                                            <button class="RM_Prog"> Read More </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="RO_subjects" id="RO_main">
+                                <div class="subject-theme">
+                                    <div class="box-image">
+                                        <img class="left-image" src="./images/course5.jpg" alt="Redes-ordenadores" />
+                                        <div class="right-text">
+                                            <h4>Redes de ordenadores</h4>
+                                            <h5> Cód. 14733</h5>
+                                            <button class="RM_RO"> Read More </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--! end of #content -->
+                    <div id="paginator">
+                        <form>
+                            <label>mostrar</label>
+                            <div class="select-container">
+                                <select autocomplete="off" id="paginate_show">
+                                    <option>3</option>
+                                    <option selected="selected">6</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </form>
+
+                        <!-- navigation holder -->
+                        <div class="holder"></div>
+                    </div>
+                    <!-- Nº of items per page form -->
+                </div>
+
+                <div class="asignatura" id="I_Soft">
+                    <div class="cabecera">
+                        <img class="images_inside_clases" src="images/course1.jpg" alt="Ingenieria-Software">
+                        <h1 class="intro_inside_clases"> Ingenieria de Software Cód. 14730</h1>
+                        <button class="return_home">Return</button>
+                    </div>
+                    <div class="temario">
+                        <h1>TEMARIO</h1>
+                        <div class="temario_material">
+                            <h2 class="material_inside_clases"> Material Docente</h2>
+                            <div id="all_material_inside_clases_IS"></div>
+                            <h2 class="activity_inside_clases"> Actividades y problemas </h2>
+                            <div id="all_activities_inside_clases_IS"></div>
+                        </div>
+                    </div>
+                    <div class="calificate_inside_subject" id="Calificate_act_IS">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Email Alumno</th>
+                                    <th>Fecha entrega</th>
+                                    <th>Nota</th>
+                                    <th>Revision</th>
+                                    <th>Calificar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+
+                    <div class="cal_inside_subject" id="Cal_act_IS">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Nota</th>
+                                    <th> Pedir Revision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="asignatura" id="I_User">
+                    <div class="cabecera">
+                        <img class="images_inside_clases" src="images/course2.jpg" alt="Interfaces-usuarios">
+                        <h1 class="intro_inside_clases"> Interfaces de Usuario Cód. 14731</h1>
+                        <button class="return_home">Return</button>
+                    </div>
+                    <div class="temario">
+                        <h1>TEMARIO</h1>
+                        <div class="temario_material">
+                            <h2 class="material_inside_clases"> Material Docente</h2>
+                            <div id="all_material_inside_clases_IU"></div>
+                            <h2 class="activity_inside_clases"> Actividades y problemas </h2>
+                            <div id="all_activities_inside_clases_IU"></div>
+                        </div>
+                    </div>
+                    <div class="calificate_inside_subject" id="Calificate_act_IU">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Email Alumno</th>
+                                    <th>Fecha entrega</th>
+                                    <th>Nota</th>
+                                    <th>Revision</th>
+                                    <th>Calificar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                    <div class="cal_inside_subject" id="Cal_act_IU">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Nota</th>
+                                    <th> Pedir Revision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="asignatura" id="A_Comp">
+                    <div class="cabecera">
+                        <img class="images_inside_clases" src="images/course3.jpg" alt="Arquitectura-computadores">
+                        <h1 class="intro_inside_clases"> Arquitectura de Computadores Cód. 14732</h1>
+                        <button class="return_home">Return</button>
+                    </div>
+                    <div class="temario">
+                        <h1>TEMARIO</h1>
+                        <div class="temario_material">
+                            <h2 class="material_inside_clases"> Material Docente</h2>
+                            <div id="all_material_inside_clases_AC"></div>
+                            <h2 class="activity_inside_clases"> Actividades y problemas </h2>
+                            <div id="all_activities_inside_clases_AC"></div>
+                        </div>
+                    </div>
+                    <div class="calificate_inside_subject" id="Calificate_act_AC">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Email Alumno</th>
+                                    <th>Fecha entrega</th>
+                                    <th>Nota</th>
+                                    <th>Revision</th>
+                                    <th>Calificar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                    <div class=" cal_inside_subject" id="Cal_act_AC">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Nota</th>
+                                    <th> Pedir Revision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="asignatura" id="Prog_subject">
+                    <div class="cabecera">
+                        <img class="images_inside_clases" src="images/course4.jpeg" alt="Programacion">
+                        <h1 class="intro_inside_clases"> Programación Cód. 14734</h1>
+                        <button class="return_home">Return</button>
+                    </div>
+                    <div class="temario">
+                        <h1>TEMARIO</h1>
+                        <div class="temario_material">
+                            <h2 class="material_inside_clases"> Material Docente</h2>
+                            <div id="all_material_inside_clases_Prog"></div>
+                            <h2 class="activity_inside_clases"> Actividades y problemas </h2>
+                            <div id="all_activities_inside_clases_Prog"></div>
+                        </div>
+                    </div>
+                    <div class="calificate_inside_subject" id="Calificate_act_Prog">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Email Alumno</th>
+                                    <th>Fecha entrega</th>
+                                    <th>Nota</th>
+                                    <th>Revision</th>
+                                    <th>Calificar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                    <div class="cal_inside_subject" id="Cal_act_Prog">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Nota</th>
+                                    <th> Pedir Revision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="asignatura" id="R_Ord">
+                    <div class="cabecera">
+                        <img class="images_inside_clases" src="images/course5.jpg" alt="Redes-ordenadores">
+                        <h1 class="intro_inside_clases"> Redes de Ordenadores Cód. 14733</h1>
+                        <button class="return_home">Return</button>
+                    </div>
+                    <div class="temario">
+                        <h1>TEMARIO</h1>
+                        <div class="temario_material">
+                            <h2 class="material_inside_clases"> Material Docente</h2>
+                            <div id="all_material_inside_clases_RO"></div>
+                            <h2 class="activity_inside_clases"> Actividades y problemas </h2>
+                            <div id="all_activities_inside_clases_RO"></div>
+                        </div>
+                    </div>
+                    <div class="calificate_inside_subject" id="Calificate_act_RO">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Email Alumno</th>
+                                    <th>Fecha entrega</th>
+                                    <th>Nota</th>
+                                    <th>Revision</th>
+                                    <th>Calificar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                    <div class="cal_inside_subject" id="Cal_act_RO">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Nota</th>
+                                    <th>Pedir Revision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="asignatura" id="E_comp">
+                    <div class="cabecera">
+                        <img class="images_inside_clases" src="images/course6.jpg" alt="Estructura-computadores">
+                        <h1 class="intro_inside_clases"> Estructura de computadores Cód. 14735</h1>
+                        <button class="return_home">Return</button>
+                    </div>
+                    <div class="temario">
+                        <h1>TEMARIO</h1>
+                        <div class="temario_material">
+                            <h2 class="material_inside_clases"> Material Docente</h2>
+                            <div id="all_material_inside_clases_EC"></div>
+                            <h2 class="activity_inside_clases"> Actividades y problemas </h2>
+                            <div id="all_activities_inside_clases_EC"></div>
+                        </div>
+                    </div>
+
+                    <div class="calificate_inside_subject" id="Calificate_act_EC">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Email Alumno</th>
+                                    <th>Fecha entrega</th>
+                                    <th>Nota</th>
+                                    <th>Revision</th>
+                                    <th>Calificar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                    <div class="cal_inside_subject" id="Cal_act_EC">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Nota</th>
+                                    <th>Pedir Revision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="Upload_content">
+                    <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                    <div id="material_title"></div>
+                    <div class="bootstrap-iso">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <form id="form_material" onsubmit="return false;" autocomplete="off">
+                                        <p><i class="fas fa-info-circle"></i>Para que el material sea visible para todos los alumnos de la asignatura, deberá completar el formulario y presionar "Submit"</p>
+                                        <div class="form-group "><label class="control-label requiredField" for="material_name">Nombre del Material
+                                            <span class="asteriskField">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-file"></i>
+                                                </div>
+                                                <input class="form-control" id="material_name" name="material_name" placeholder="Ingrese el nombre del material" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label requiredField" for="textarea_material">Texto del Material <span class="asteriskField">*</span></label>
+                                            <textarea class="form-control" cols="40" id="textarea_material" name="textarea_material" placeholder="Ingrese Texto" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <button class="btn btn-success " name="submit" type="submit" onclick="SaveMaterial()">Submit</button>
+                                                <button class="btn btn-default reset_button" type="reset" value="Reset">Reset</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Upload_activity">
+                    <div id="Activity_title"></div>
+                    <div class="bootstrap-iso">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <form id="form_activity" onsubmit="return false;" autocomplete="off">
+                                        <p><i class="fas fa-info-circle"></i>Para que la actividad sea visible para todos los alumnos de la asignatura, deberá completar el formulario y presionar "Submit"</p>
+                                        <div class="form-group">
+                                            <label class="control-label requiredField" for="name_activity_input">Nombre de la Actividad <span class="asteriskField">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-file"></i></div>
+                                                <input class="form-control" id="name_activity_input" name="name_activity_input" placeholder="Ingrese el nombre de la Actividad" type="text" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label requiredField" for="textarea_activity">Detalles de la Actividad <span class="asteriskField">*</span></label>
+                                            <textarea class="form-control" cols="40" id="textarea_activity" name="textarea_activity" placeholder="Ingrese detalles de la Actividad" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label requiredField" for="date_activity">Fecha del final de la Actividad<span class="asteriskField">*</span></label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="date_activity" name="date_activity" type="date" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label requiredField" for="time_activity">Hora del final de la Actividad<span class="asteriskField">*</span></label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="time_activity" name="time_activity" type="time" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <button class="btn btn-success " name="submit" type="submit" onclick="SaveActivities()">Submit</button>
+                                                <button class="btn btn-default reset_button" type="reset" value="Reset">Reset</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calification_all_students">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asignatura</th>
+                                <th>Actividad</th>
+                                <th>Email Alumno</th>
+                                <th>Nota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                </div>
+
+                <div class="calification_my_students">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asignatura</th>
+                                <th>Actividad</th>
+                                <th>Nota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="download_holder"><button class="export_grades_student"><i class="fas fa-file-download"></i></button></div>
+                </div>
+
+                <div class="Upload_activity_response">
+                    <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                    <div id="activity_response_subject"></div>
+                    <div id="activity_response_title"></div>
+                    <div class="bootstrap-iso">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <form id="form_act_response" onsubmit="return false;" autocomplete="off">
+                                        <div class="form-group "><label class="control-label requiredField" for="response_act_name">Titulo de la entrega
+                                                <span class="asteriskField">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-file"></i>
+                                                </div>
+                                                <input class="form-control" id="response_act_name" name="response_act_name" placeholder="Ingrese el nombre del material" type="text" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="control-label requiredField" for="textarea_response_act">Texto de la entrega <span class="asteriskField">*</span></label>
+                                            <textarea class="form-control" cols="40" id="textarea_response_act" name="textarea_response_act" placeholder="Ingrese Texto" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <button class="btn btn-success " name="submit" type="submit" onclick="SaveActivity_Response()">Submit</button>
+                                                <button class="btn btn-default reset_button" type="reset" value="Reset">Reset</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fondo_transparente">
+                    <div class="modal_grade">
+                        <div class="modal_cerrar">
+                            <span>x</span>
+                        </div>
+                        <div id="modal_titulo"></div>
+                        <div id="modal_mensaje">
+                        </div>
+
+                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                        <div class="bootstrap-iso">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <form id="form_put_grade" onsubmit="return false;" autocomplete="off">
+                                            <div class="form-group ">
+                                                <label class="control-label requiredField" for="number_put_grade">Calificaci&oacute;n<span class="asteriskField"> *</span></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-table"></i>
+                                                    </div>
+                                                    <input class="form-control" id="number_put_grade" name="number_put_grade" placeholder="Ingrese la calificacion" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div>
+                                                    <button class="btn btn-success " id="sumbit_grade" name="submit" type="submit">Submit</button>
+                                                    <button class="btn btn-default reset_button" type="reset" value="Reset">Reset</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--FORO-->
+                <div class="forum_topic">
+                    <h2 id="topic_subject">FORO DE LA ASIGNATURA</h2>
+                    <button class="new_post"><i class="fas fa-plus-circle"></i> NEW POST</button>
+                    <button class="forum_topic_back"><i class="fas fa-chevron-circle-left"></i></button>
+                    <div class="topic_discussion">
+                        <div class="form">
+                            <label for="event-text1">NEW POST</label>
+                            <textarea id="event-text1" name="textarea" placeholder="Write your message here..."></textarea>
+                            <button>PUBLISH</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <div class="contact-main">
+            HUGO ROMERO RICO 100386322@alumnos.uc3m.es <br><br> MARIBEL MEDRANO FERNÁNDEZ 100386149@alumnos.uc3m.es <br><br> KHAOULA EL MOURTAQI SAYED 100386293@alumnos.uc3m.es <br><br> IRENE FERNÁNDEZ ROBLEDO 100386294@alumnos.uc3m.es
+        </div>
+
+        <div class="copyright-main">
+            COPYRIGHT © 2020 HUGO ROMERO RICO - MARIBEL MEDRANO FERNÁNDEZ <br> KHAOULA EL MOURTAQI SAYED - IRENE FERNÁNDEZ ROBLEDO
+        </div>
+
+        <div class="privacy-main">
+            YOUR PRIVACY IS VERY IMPORTANT FOR US.<br><br> CUSTOMER INFORMATION WILL NOT BE COLLECTED WITHOUT YOUR EXPRESS CONSENT.<br><br> ALL THE FUNDAMENTAL RIGHTS OF DATA PRIVACY INCLUDED IN THE LAW OF USERS AND CONSUMERS,
+            <br> SUCH AS THE RIGHT TO BE FORGOTTEN, GOVERN THIS PLATFORM.
+        </div>
+
+    </div>
+
+    <footer id="footer_main">
+        <div><button class="copyright_button" type="button">COPYRIGHT</button></div>
+        <div><button class="contact_button" type="button">CONTACT</button></div>
+        <div><button class="privacy_button" type="button">PRIVACY</button></div>
+    </footer>
+
+</body>
+
+</html>

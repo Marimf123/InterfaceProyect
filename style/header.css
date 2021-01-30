@@ -1,0 +1,170 @@
+header {
+    margin: 15px 30px;
+    padding: 5px 15px 5px 10px;
+    background-color: #1A1A1A;
+    font-family: Plain, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: Impact, Charcoal, sans-serif;
+    height: 72px;
+    width: 190px;
+    box-sizing: border-box;
+    color: #ecbf17;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+.logo i {
+    font-size: 60px;
+    padding: 5px;
+    height: 70px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#of {
+    height: 27px;
+    font-size: 33px;
+    padding: 5px;
+    position: absolute;
+    bottom: 22px;
+    right: 80px;
+}
+
+#logo_theory_of {
+    padding: 5px;
+    height: 22px;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#logo_errors {
+    color: white;
+    height: 27px;
+    font-size: 33px;
+    padding: 5px;
+    position: absolute;
+    bottom: 22px;
+    right: 0px;
+}
+
+#eclet-tablet,.nav-bar{
+    display: none;
+}
+
+.logo:hover i,
+.logo:hover #logo_theory_of,
+.logo:hover #of
+{
+    color: white;
+}
+
+.logo:hover #logo_errors,
+#notification:hover
+{
+    color: #ecbf17;
+}
+
+#notification,
+#menu_arrow {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav_top {
+    font-weight: 100;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    min-width: 30%;
+}
+
+.nav_top button{
+    cursor: pointer;
+}
+.nav_top > div:first-child{
+    margin-left: auto;
+    margin-right: 15px;
+    position: relative;
+}
+.nav_top > #user_contact{
+    position: relative;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    padding-top: 1px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #ecbf17;
+    color: white;
+    font-size: 11px;
+}
+
+#user_contact {
+    display: flex;
+    align-items: center;
+}
+
+#user_img img {
+    height: 30px;
+    margin-left: 8px;
+}
+
+#user_name_menu {
+    font-size: 15px;
+}
+
+.submenu {
+    position: absolute;
+    left: -35px;
+    background: #333333;
+    border-radius: 1px;
+    color: white;
+    width: 80px;
+    text-align: center;
+    display: none;
+}
+
+.submenu button{
+    color: white;
+    font-size: 12px;
+}
+
+.nav_top #menu_arrow:hover .submenu {
+    opacity: 1;
+}
+
+.link-name-menu {
+    text-align: center;
+    margin: 15px 20px 10px 10px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: .25em;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#nav-bar-movil {
+    display: none;
+}

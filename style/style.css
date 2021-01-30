@@ -1,0 +1,676 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+body {
+    margin: 0;
+    color: white;
+    background-image: url(../images/yellow\ smoke\ hard\ darkened\ bg.png);
+    background-color: black;
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: 'Mukta', sans-serif;
+    height: 100vh;
+    min-height: 550px;
+    word-wrap: break-word;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 55px;
+    overflow: auto;
+    width: 100%;
+}
+
+.container {
+    order: 2;
+    display: flex;
+    margin: 0 30px;
+}
+
+.nav_left,
+.container main {
+    padding: 15px;
+}
+
+.nav_left,
+.container main,
+header {
+    box-sizing: border-box;
+}
+
+.contact-main,
+.copyright-main,
+.privacy-main {
+    display: none;
+    width: 100%;
+    margin: 10% 10px;
+    overflow: hidden;
+    height: 1%;
+    font-family: Plain, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    text-align: center;
+}
+
+#main_page {
+    display: none;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+#footer_main,
+.AC_subjects,
+.EC_subjects,
+.IS_subjects,
+.IU_subjects,
+.RO_subjects,
+.Prog_subjects,
+.cal_inside_subject,
+.calification_all_students,
+.calification_my_students {
+    display: none;
+}
+
+
+/*----------------------------------Footer--------------------------------------*/
+
+
+/*Pie de pagina*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+footer {
+    position: relative;
+    margin-top: -45px;
+    height: 45px;
+    width: 100%;
+    background-color: #141517;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: solid 1px rgba(255, 255, 255, 0.5);
+}
+
+footer>div {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div~div {
+    border-left: solid 1px rgba(255, 255, 255, 0.5);
+}
+
+footer div>* {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Plain, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    letter-spacing: .4em;
+    font-size: 12px;
+}
+
+footer div>*:hover,
+footer div>*:hover .uc3m-logo {
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 1;
+}
+
+
+/*----------------------------------------LEft-Aside------------------------------------------*/
+
+.nav_left {
+    position: relative;
+    order: 1;
+    width: 25%;
+    background: rgba(20, 21, 23, 0.8);
+    font-family: Plain, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    text-decoration: none;
+    margin-right: 10px;
+    word-wrap: break-word;
+}
+
+.nav_left li button,
+.nav_left li a {
+    font-size: 15px;
+    display: block;
+    width: 90%;
+    padding: 5% 5%;
+    box-sizing: border-box;
+    font-weight: 200;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: .04em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.fa-check-square {
+    color: #0ebd0e;
+}
+
+.calification_my_students {
+    width: 100%;
+}
+
+.menu-contenedor ul .active button {
+    color: red;
+}
+
+.nav_left li button i:first-child {
+    width: 30px;
+}
+
+.nav_left li button i:last-child {
+    font-size: .8rem;
+    margin-left: 3px;
+}
+
+.nav_left li li button {
+    padding-left: 10%;
+}
+
+.nav_left li ul button {
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.nav_left li ul li ul li button {
+    margin: 10px auto;
+    padding: 2% 2% 2% 15%;
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+.nav_left button:hover,
+.nav_left li a:hover {
+    color: #ecbf17;
+    transition: 0.5s;
+}
+
+.nav_left button:active {
+    outline: none;
+    border: none;
+}
+
+#menu_izquierda li,
+#menu_izquierda_mov li,
+.nav_top ul li {
+    list-style-type: none;
+}
+
+#menu_izquierda ul ul,
+#menu_izquierda ul,
+#menu_izquierda_mov ul ul,
+#menu_izquierda_mov ul {
+    display: none;
+}
+
+#menu_izquierda li.active>ul,
+#menu_izquierda_mov li.active>ul {
+    display: block;
+}
+
+.white-line {
+    background-color: white;
+    opacity: 0.3;
+    margin: 0 auto;
+    width: 60%;
+    height: 2.5px;
+}
+
+#main-white-line {
+    width: 100%;
+    opacity: 0.5;
+}
+
+.nav_left div h2 {
+    text-align: center;
+    margin: 30px 0px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: .25em;
+    color: rgba(255, 255, 255, .8);
+}
+
+#menu_izquierda,
+#menu_izquierda_mov {
+    margin-top: 30px;
+}
+
+#menu_izquierda li button,
+#menu_izquierda_mov li button {
+    color: white;
+}
+
+
+/*------------------------------------Main---------------------------------*/
+
+main {
+    order: 2;
+    width: 75%;
+    margin-left: 10px;
+    overflow: hidden;
+    height: 1%;
+    display: flex;
+    background-color: #141517;
+    font-family: Plain, Helvetica Neue, Arial, Noto Sans, sans-serif;
+}
+
+.principal_page {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-image {
+    height: 100%;
+}
+
+.box-image img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    max-width: 100%;
+    display: block;
+    border: 0.3px solid #f9f9f9;
+    /* remove extra space below image */
+}
+
+div#content ul#itemContainer {
+    min-height: 0px;
+    list-style: none;
+    padding: 0;
+    margin: 15px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div#content ul#itemContainer li {
+    margin: 15px 1.5%;
+    width: 30%;
+    border: 0.3px solid #f9f9f9;
+}
+
+div#content h4 {
+    width: 100%;
+    text-align: center;
+}
+
+div#content h5 {
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    font-size: 12px;
+}
+
+div#content .right-text {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+}
+
+.right-text h4 {
+    font-size: 15px;
+}
+
+div#content ul li .subject-theme {
+    height: 100%;
+}
+
+div#content button {
+    background-color: rgba(236, 191, 23, .8);
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: auto;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 80px;
+    border-radius: 1px;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.calificate_inside_subject {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 18px;
+    border-collapse: collapse;
+}
+
+.calificate_inside_subject thead th,
+.cal_inside_subject thead th,
+.calification_my_students_subject thead th,
+.calification_my_students thead th,
+.calification_all_students thead th {
+    font-size: 13px;
+}
+
+.calificate_inside_subject tbody td,
+.cal_inside_subject tbody td,
+.calification_my_students_subject tbody td,
+.calification_my_students tbody td,
+.calification_all_students tbody td {
+    font-size: 11px;
+}
+
+.calificate_inside_subject td button .fa-edit,
+.calification_my_students_subject td button .fa-edit {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.calificate_inside_subject table,
+.calificate_inside_subject thead,
+.calificate_inside_subject tbody,
+.calificate_inside_subject tr,
+.cal_inside_subject table,
+.cal_inside_subject thead,
+.cal_inside_subject tbody,
+.cal_inside_subject tr,
+.calification_my_students_subject table,
+.calification_my_students_subject thead,
+.calification_my_students_subject tbody,
+.calification_my_students_subject tr,
+.calification_my_students table,
+.calification_my_students thead,
+.calification_my_students tbody,
+.calification_my_students tr,
+.calification_all_students table,
+.calification_all_students thead,
+.calification_all_students tbody,
+.calification_all_students tr,
+.calification_all_students {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Content -> Unordered Lists */
+
+.principal_page form {
+    margin: 0px 20px;
+    padding: 0px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+}
+
+#paginator {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#paginator label {
+    font-size: 12px;
+    margin-right: 5px;
+    color: rgba(255, 255, 255, .7);
+}
+
+#paginator .select-container {
+    width: 50px;
+    overflow: hidden;
+    border: solid 1px rgba(255, 255, 255, .2);
+    position: relative;
+}
+
+#paginator .select-container i {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    padding-top: 10px;
+    padding-left: 4px;
+    border-left: solid 1px rgba(255, 255, 255, .2);
+    font-size: 9px;
+    z-index: 0;
+    color: #ecbf17;
+    pointer-events: none;
+    height: 100%;
+}
+
+#paginator select {
+    padding: 5px;
+    width: 70px;
+    background-color: transparent;
+    color: #ecbf17;
+    text-align: left;
+    padding-left: 8px;
+    border: none;
+}
+
+#paginator select option {
+    border: solid 1px rgba(255, 255, 255, .2);
+    background-color: rgb(20, 21, 23);
+    width: 50px;
+}
+
+.holder {
+    margin: 20px 40%;
+    text-align: center;
+    padding: 0px;
+    width: 200px;
+}
+
+.I_Soft,
+.I_User,
+.A_Comp,
+.R_Ord,
+.E_comp,
+.Upload_content,
+.Upload_activity,
+.Upload_activity_response {
+    display: none;
+}
+
+.return_home {
+    color: rgba(236, 191, 23, .6);
+    font-size: 12px;
+    padding: 5px 7px;
+    border: solid 1px rgba(236, 191, 23, .5);
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.return_home:hover {
+    border-color: rgba(236, 191, 23, .9);
+    color: rgba(236, 191, 23, 1);
+}
+
+.Upload_content,
+.Upload_activity,
+.I_Soft,
+#form_material,
+.bootstrap-iso .col-md-6,
+.Upload_activity_response {
+    width: 100% !important;
+}
+
+.bootstrap-iso .formden_header h2,
+.bootstrap-iso .formden_header p,
+.bootstrap-iso form {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f9f9f9;
+}
+
+.bootstrap-iso,
+.bootstrap-iso input,
+.bootstrap-iso textarea {
+    background-color: #141517 !important;
+}
+
+.bootstrap-iso .btn-default {
+    background-color: #141517 !important;
+    margin: 0 40px 0 40px;
+}
+
+.bootstrap-iso .form-group {
+    background-color: #141517 !important;
+    margin: 40px;
+}
+
+.bootstrap-iso form button,
+.bootstrap-iso form button:hover {
+    color: #ffffff !important;
+}
+
+.bootstrap-iso .form-control:focus {
+    border-color: #ecbf17 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 191, 23, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 191, 23, 0.6);
+}
+
+.asteriskField {
+    color: red;
+}
+
+.bootstrap-iso form .input-group-addon {
+    color: #141517;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding-left: 12px
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background: transparent;
+    margin: auto;
+    padding: 10px;
+    width: 95%;
+}
+
+
+/* The Close Button */
+
+.close_calendar {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_calendar:hover,
+.close_calendar:focus {
+    color: #ecbf17;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fondo_transparente {
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.226);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.modal_grade {
+    background: linear-gradient(0deg, white 70%, #ecbf17 30%);
+    width: 600px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.modal_grade .bootstrap-iso {
+    background: transparent;
+}
+
+.modal_grade .bootstrap-iso,
+.modal_grade .bootstrap-iso input,
+.modal_grade .bootstrap-iso textarea,
+.modal_grade .bootstrap-iso .form-group {
+    background-color: transparent !important;
+}
+
+.modal_grade .bootstrap-iso form {
+    color: #141517;
+}
+
+.modal_grade .bootstrap-iso form button {
+    color: #141517;
+    margin: 40px;
+}
+
+.modal_cerrar {
+    background: white;
+    position: absolute;
+    right: -20px;
+    color: #ecbf17;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#modal_titulo {
+    color: white;
+    font-size: 40px;
+    padding-top: 45px;
+}
+
+#modal_mensaje {
+    padding: 0px 30px;
+    color: black;
+}

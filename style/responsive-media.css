@@ -1,0 +1,352 @@
+/*------------------------------------Break-Points---------------------------------*/
+
+@media (max-width: 768px) {
+    .nav_left ul {
+        margin-top: 10px;
+    }
+    div#content ul#itemContainer {
+        flex-direction: column;
+    }
+    #eclet-tablet {
+        display: inline-block;
+        font-size: 20px;
+    }
+    div#content ul#itemContainer li {
+        width: 100%;
+    }
+    .asignatura .cabecera h1 {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+    .right-text h4 {
+        color: rgba(233, 200, 80, 0.9);
+        font-size: 12px;
+    }
+    .container,
+    header {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    main {
+        flex: 3;
+        margin-left: 0;
+    }
+    div#content button {
+        padding: 5px;
+    }
+    div#content .right-text {
+        min-height: 150px;
+    }
+    .nav_left div h2 {
+        font-size: 10px;
+    }
+    main h2 {
+        color: white;
+    }
+    #logo_errors,
+    #logo_theory_of,
+    #of,
+    .asignatura,
+    #main-white-line {
+        display: none;
+    }
+    .container {
+        flex-wrap: wrap;
+    }
+    .container #add-content-main {
+        flex-direction: column;
+    }
+    .nav_left {
+        flex: 1;
+        padding: 5px;
+    }
+    .nav_left ul {
+        text-align: left;
+        display: inline-block;
+        padding-left: 0;
+    }
+    .nav_left li ul button {
+        padding: 5px 0 5px 5px;
+    }
+    .nav_left ul button,
+    .nav_left li ul button {
+        font-size: 11px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px 2px;
+    }
+    .nav_left li button i:first-child {
+        width: 20px;
+    }
+    .asignatura {
+        font-size: 15px;
+        margin-left: 8px;
+    }
+    div#content .right-text {
+        height: 100%;
+        min-height: 120px;
+    }
+    .calificate_inside_subject thead th,
+    .cal_inside_subject thead th {
+        font-size: 11px;
+    }
+    .calificate_inside_subject tbody td,
+    .cal_inside_subject tbody td {
+        font-size: 9px;
+    }
+}
+
+#log-login-show,
+#log-login-show-movil,
+#log-reg-show,
+#log-reg-show-movil {
+    opacity: 0;
+}
+
+
+/* MOVIL */
+
+@media (max-width: 600px) {
+    .logo,
+    .box-image h5 {
+        display: none;
+    }
+    .nav_left {
+        display: none;
+    }
+    #menu_izquierda_mov li button i:first-child {
+        width: unset;
+        margin-left: 3px;
+    }
+    .nav_left li button {
+        flex-direction: column;
+    }
+    div.principal_page,
+    div#content {
+        width: 100%;
+    }
+    div#content ul#itemContainer li {
+        min-width: 90px;
+    }
+    div#content .right-text {
+        padding-top: 5px;
+    }
+    .right-text h4 {
+        color: rgba(233, 200, 80, 0.9);
+        font-size: 10px;
+    }
+    div#content button {
+        padding: 2px;
+        font-size: 8px;
+        width: 50px;
+    }
+    /*Cosas de tablas que pueden ser utiles*/
+    #participants,
+    #grades-act,
+    #forum-messages,
+    #link-used {
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+    #participants thead,
+    #grades-act thead,
+    #forum-messages thead,
+    #link-used thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    #participants tr,
+    #grades-act tr,
+    #forum-messages tr,
+    #link-used tr {
+        border-bottom: 3px solid #0c0d0e;
+        display: block;
+        margin-bottom: .625em;
+        border: 1px solid #ddd;
+        padding: .35em;
+    }
+    #participants td,
+    #grades-act td,
+    #forum-messages td,
+    #link-used td {
+        display: block;
+        text-align: right;
+    }
+    #participants td::before,
+    #grades-act td::before,
+    #forum-messages td::before,
+    #link-used td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: 15px;
+        color: rgba(233, 200, 80, 0.8);
+        margin-right: 10px;
+    }
+    #participants td:last-child,
+    #grades-act td:last-child,
+    #forum-messages td:last-child,
+    #link-used td:last-child {
+        border-bottom: 0;
+    }
+    #forum-messages td:first-child {
+        border-top: 0;
+    }
+    #participants .foto_student,
+    #grades-act .foto_student,
+    #link-used .resources_data {
+        text-align: right;
+    }
+    #participants .message,
+    #grades-act .act-1,
+    #grades-act .act-2,
+    #grades-act .act-3,
+    #forum-messages .num-message,
+    #link-used .message_link {
+        padding-right: 100px;
+    }
+    /*-------Hamburger--------------*/
+    /*--Spin--*/
+    .hamburger--spin .hamburger-inner {
+        transition-duration: 0.22s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    .hamburger--spin .hamburger-inner::before {
+        transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+    }
+    .hamburger--spin .hamburger-inner::after {
+        transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    .hamburger--spin.is-active .hamburger-inner {
+        transform: rotate(225deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .hamburger--spin.is-active .hamburger-inner::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+    }
+    .hamburger--spin.is-active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .hamburger {
+        padding: 15px 10px 10px 10px;
+        position: relative;
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: inline-block;
+        cursor: pointer;
+        transition-property: opacity, filter;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        text-transform: none;
+        border: 0;
+        margin: 0;
+        overflow: visible;
+    }
+    .hamburger:hover {
+        opacity: 0.7;
+    }
+    .hamburger.is-active:hover {
+        opacity: 0.7;
+    }
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+        background-color: #ecbf17;
+        width: 30px;
+        height: 2px;
+    }
+    .hamburger-box {
+        width: 30px;
+        height: 20px;
+        display: inline-block;
+        position: relative;
+    }
+    .hamburger-inner {
+        width: 18px;
+        display: block;
+        top: 50%;
+        margin-top: -2px;
+    }
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        background-color: #fff;
+        width: 30px;
+        height: 2px;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        content: "";
+        display: block;
+    }
+    .hamburger-inner::before {
+        top: -10px;
+    }
+    .hamburger-inner::after {
+        bottom: -10px;
+    }
+    /* NAV-BAR */
+    .nav-bar {
+        z-index: 1000;
+        position: absolute;
+        background: rgba(20, 21, 23, 0.9);
+        top: 80px;
+        width: 220px;
+        justify-content: center;
+        align-items: center;
+        left: 20px;
+        border-right: 1.5px solid #ecbf17;
+    }
+    .nav-list {
+        list-style: none;
+    }
+    .nav-list li {
+        text-align: left;
+        padding: 10px 0;
+        margin: 10px 10px;
+    }
+    .nav-list li button,
+    .nav-list li a {
+        color: #fff;
+        font-size: 22px;
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 4px;
+        cursor: pointer;
+    }
+    footer div>* {
+        font-size: 10px;
+        letter-spacing: .2em;
+    }
+    #menu_izquierda_mov li ul button {
+        padding-left: 5px;
+    }
+    #menu_izquierda_mov li {
+        margin: 20px 0 20px 0;
+    }
+    #menu_izquierda_mov li ul li ul li button {
+        padding-left: 10px;
+    }
+}
